@@ -15,7 +15,7 @@ const CardForm = () => {
           />
         </div>
         <div className="frontCardInfo">
-          <p className="cardNumber">1234 1234 1234 1234</p>
+          <p className="cardNumber">0000 0000 0000 0000</p>
           <div className="cardDesc">
             <p className="cardName">Amrindra</p>
             <p className="cardDate">09/00</p>
