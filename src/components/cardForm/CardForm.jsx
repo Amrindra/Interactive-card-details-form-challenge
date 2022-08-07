@@ -1,6 +1,9 @@
+import { useState } from "react";
 import "./CardForm.scss";
 
 const CardForm = () => {
+  const [values, setValues] = useState({});
+
   const handleSubmit = (event) => {
     event.preventDefault();
   };
@@ -8,6 +11,12 @@ const CardForm = () => {
   return (
     <div className="cardForm">
       <div className="frontCard">
+        <div className="topImg">
+          <img
+            src="https://user-images.githubusercontent.com/70451928/183109811-2895a694-4406-4cff-89fc-84072da77ce4.svg"
+            alt=""
+          />
+        </div>
         <div className="frontImg">
           <img
             src="https://user-images.githubusercontent.com/70451928/183109745-b02ac54a-f22b-4399-b696-4f7701dfd0e5.png"
@@ -54,7 +63,7 @@ const CardForm = () => {
 
           <div className="cardFormDate">
             <div className="top">
-              <label htmlFor="">EXP. DATE(MM/YY)</label>
+              <label htmlFor="">EXP. DATE (MM/YY)</label>
               <label className="cvcLabel" htmlFor="">
                 CVC
               </label>
