@@ -1,9 +1,52 @@
 .cardForm {
   display: flex;
   height: 100vh;
+  position: relative;
+  
+  .frontCard{
+    position: absolute;
+    left: 180px;
+    top: 150px;
+
+    .frontCardInfo{
+      color: white;
+      position: absolute;
+      top: 140px;
+      left: 30px;
+
+      .cardNumber{
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: 5px;
+      }
+
+      .cardName, .cardDate{
+        font-size: 20px;
+        letter-spacing: 3px;
+        font-weight: 200;
+      }
+
+      .cardDesc{
+        display: flex;
+        justify-content: space-between;
+        gap: 220px;
+        margin-top: 20px;
+      }
+    }
+  }
+  
+  .backCard{
+    position: absolute;
+    top: 450px;
+    left: 270px;
+  }
   
   .cardFormLeft {
-    flex: 1;
+    flex: 0;
+    img{
+      height: 100%;
+      width: 500px;
+    }
   }
   
   .cardFormRight {
@@ -19,7 +62,7 @@
       justify-content: center;
 
       label{
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 500;
       }
 
@@ -37,7 +80,7 @@
 
       .top{
         .cvcLabel{
-          margin-left: 10px;
+          margin-left: 39px;
         }
       }
 
