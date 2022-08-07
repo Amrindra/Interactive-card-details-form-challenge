@@ -1,12 +1,9 @@
 .cardForm {
   display: flex;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
   
   .cardFormLeft {
     flex: 1;
-    
   }
   
   .cardFormRight {
@@ -18,6 +15,58 @@
     form {
       display: flex;
       flex-direction: column;  
+      align-items: flex-start;
+      justify-content: center;
+
+      label{
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      input{
+        padding: 10px;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid lightgray;
+        &::placeholder{
+          color: lightgray;
+        }
+      }
+
+      .top{
+        .cvcLabel{
+          margin-left: 10px;
+        }
+      }
+
+      .bottom{
+        .month {
+          width: 70px;
+          margin-right: 10px;
+        }
+
+        .year {
+          width: 70px;
+          margin-right: 20px;
+
+        }
+        
+        .cvc{
+          width: 200px;
+        }
+      }
+      
+      button{
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        background-color: black;
+        color: white;
+        height: 40px;
+        margin-top: 20px;
+      }
     }
   }
 }

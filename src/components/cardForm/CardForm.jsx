@@ -17,20 +17,38 @@ const CardForm = () => {
       <div className="cardFormRight">
         <form onSubmit={handleSubmit}>
           <label htmlFor="">CARDHOLDER NAME</label>
-          <input type="text " placeholder="e.g. Jane Appleseed" />
+          <input required type="text" placeholder="e.g. Jane Appleseed" />
           <label htmlFor="">CARD NUMBER </label>
-          <input type="number " placeholder="e.g. 1234 5678 9123 0000" />
+          <input
+            required
+            type="number"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
 
           <div className="cardFormDate">
             <div className="top">
               <label htmlFor="">EXP. DATE(MM/YY)</label>
-              <label htmlFor="">CVC</label>
+              <label className="cvcLabel" htmlFor="">
+                CVC
+              </label>
             </div>
 
             <div className="bottom">
-              <input type="number" placeholder="e.g. 123" />
-              <input type="number" placeholder="MM" />
-              <input type="number" placeholder="YY" />
+              <input
+                required
+                className="month"
+                type="number"
+                placeholder="MM"
+                min={0}
+              />
+              <input required className="year" type="number" placeholder="YY" />
+              <input
+                required
+                className="cvc"
+                type="number"
+                placeholder="e.g. 123"
+                max={3}
+              />
             </div>
           </div>
           <button>Confirm</button>
