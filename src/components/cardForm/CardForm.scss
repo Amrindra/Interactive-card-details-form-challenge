@@ -1,0 +1,23 @@
+.cardForm {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  
+  .cardFormLeft {
+    flex: 1;
+    
+  }
+  
+  .cardFormRight {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    form {
+      display: flex;
+      flex-direction: column;  
+    }
+  }
+}
