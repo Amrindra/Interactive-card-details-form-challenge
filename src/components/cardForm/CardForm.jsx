@@ -2,11 +2,21 @@ import { useState } from "react";
 import "./CardForm.scss";
 
 const CardForm = () => {
-  const [values, setValues] = useState({});
+  const [cardNumber, setCardNumber] = useState(null);
+  const [cardName, setCardName] = useState(null);
+  const [month, setMonth] = useState(null);
+  const [year, setYear] = useState(null);
+  const [cvc, setCVC] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
+  // const handleChange = (e) => {
+  //   setCardName(e.target.value);
+  // };
+
+  console.log(cardName);
 
   return (
     <div className="cardForm">
@@ -26,8 +36,8 @@ const CardForm = () => {
         <div className="frontCardInfo">
           <p className="cardNumber">0000 0000 0000 0000</p>
           <div className="cardDesc">
-            <p className="cardName">Amrindra</p>
-            <p className="cardDate">09/00</p>
+            <p className="cardName">{cardName}</p>
+            <p className="cardDate">00/00</p>
           </div>
         </div>
       </div>
@@ -53,7 +63,12 @@ const CardForm = () => {
       <div className="cardFormRight">
         <form onSubmit={handleSubmit}>
           <label htmlFor="">CARDHOLDER NAME</label>
-          <input required type="text" placeholder="e.g. Jane Appleseed" />
+          <input
+            onChange={(e) => setCardName(e.target.value)}
+            required
+            type="text"
+            placeholder="e.g. Jane Appleseed"
+          />
           <label htmlFor="">CARD NUMBER </label>
           <input
             required
