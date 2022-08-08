@@ -74,6 +74,8 @@ const CardForm = () => {
             placeholder="e.g. Jane Appleseed"
             onChange={(e) => setCardName(e.target.value)}
           />
+          <span>Name can't be blank</span>
+
           <label htmlFor="">CARD NUMBER </label>
           <input
             required
@@ -83,6 +85,7 @@ const CardForm = () => {
             maxLength={16}
             onChange={(e) => setCardNumber(e.target.value)}
           />
+          <span>Wrong format, numbers only</span>
 
           <div className="cardFormDate">
             <div className="top">
@@ -123,6 +126,7 @@ const CardForm = () => {
                 onChange={(e) => setCVC(e.target.value)}
               />
             </div>
+            <span>Can't be blank</span>
           </div>
 
           <button>Confirm</button>

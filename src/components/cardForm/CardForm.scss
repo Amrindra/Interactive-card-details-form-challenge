@@ -100,12 +100,17 @@
         padding: 10px;
         width: 100%;
         margin-top: 5px;
-        margin-bottom: 20px;
         border-radius: 5px;
         border: 1px solid lightgray;
         &::placeholder{
           color: lightgray;
         }
+      }
+      
+      span{
+        color: red;
+        margin-top: 5px;
+        margin-bottom: 20px;
       }
 
       .top{
@@ -139,6 +144,7 @@
         color: white;
         height: 40px;
         margin-top: 20px;
+        cursor: pointer;
       }
     }
   }
