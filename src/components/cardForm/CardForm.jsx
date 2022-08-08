@@ -38,7 +38,7 @@ const CardForm = () => {
           />
         </div>
         <div className="frontCardInfo">
-          <p className="cardNumber">{`${format(cardNumber)}`}</p>
+          <p className="cardNumber">{format(cardNumber)}</p>
           <div className="cardDesc">
             <p className="cardName">{cardName}</p>
             <p className="cardDate">{`${month}/${year}`}</p>
