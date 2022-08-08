@@ -16,6 +16,10 @@ const CardForm = () => {
   //   setCardName(e.target.value);
   // };
 
+  function format(splitDigit) {
+    return splitDigit.toString().replace(/\d{4}(?=.)/g, "$& ");
+  }
+
   console.log(cardName);
 
   return (
@@ -34,7 +38,7 @@ const CardForm = () => {
           />
         </div>
         <div className="frontCardInfo">
-          <p className="cardNumber">{cardNumber}</p>
+          <p className="cardNumber">{`${format(cardNumber)}`}</p>
           <div className="cardDesc">
             <p className="cardName">{cardName}</p>
             <p className="cardDate">{`${month}/${year}`}</p>
@@ -65,6 +69,7 @@ const CardForm = () => {
           <label htmlFor="">CARDHOLDER NAME</label>
           <input
             required
+            className="cardHolderName"
             type="text"
             placeholder="e.g. Jane Appleseed"
             onChange={(e) => setCardName(e.target.value)}
@@ -91,8 +96,9 @@ const CardForm = () => {
               <input
                 required
                 className="month"
-                type="text"
+                type="number"
                 placeholder="MM"
+                pattern="[0-9]+"
                 min={0}
                 maxLength={2}
                 onChange={(e) => setMonth(e.target.value)}
@@ -102,6 +108,7 @@ const CardForm = () => {
                 className="year"
                 type="number"
                 placeholder="YY"
+                pattern="[0-9]+"
                 maxLength={2}
                 onChange={(e) => setYear(e.target.value)}
               />

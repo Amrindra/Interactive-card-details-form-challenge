@@ -19,8 +19,10 @@
       position: absolute;
       top: 140px;
       left: 30px;
-
+      width: 400px;
+      
       .cardNumber{
+        height: 30px;
         font-size: 28px;
         font-weight: 100;
         letter-spacing: 2px;
@@ -38,11 +40,12 @@
 
       .cardDate{
         position: absolute;
-        right: -30px;
+        right: 0px;
       }
       
       .cardName{
         width: 300px;
+        text-transform: capitalize;
       }
       }
     }
