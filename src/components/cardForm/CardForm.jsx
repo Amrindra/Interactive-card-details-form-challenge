@@ -2,11 +2,11 @@ import { useState } from "react";
 import "./CardForm.scss";
 
 const CardForm = () => {
-  const [cardNumber, setCardNumber] = useState(null);
+  const [cardNumber, setCardNumber] = useState("0000 0000 0000 0000");
   const [cardName, setCardName] = useState("Jhon Doe");
-  const [month, setMonth] = useState(null);
-  const [year, setYear] = useState(null);
-  const [cvc, setCVC] = useState(null);
+  const [month, setMonth] = useState("00");
+  const [year, setYear] = useState("00");
+  const [cvc, setCVC] = useState("000");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,10 +34,10 @@ const CardForm = () => {
           />
         </div>
         <div className="frontCardInfo">
-          <p className="cardNumber">0000 0000 0000 0000</p>
+          <p className="cardNumber">{cardNumber}</p>
           <div className="cardDesc">
             <p className="cardName">{cardName}</p>
-            <p className="cardDate">00/00</p>
+            <p className="cardDate">{`${month}/${year}`}</p>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ const CardForm = () => {
         />
 
         <div className="backCardInfo">
-          <p>000</p>
+          <p>{cvc}</p>
         </div>
       </div>
 
@@ -64,16 +64,19 @@ const CardForm = () => {
         <form onSubmit={handleSubmit}>
           <label htmlFor="">CARDHOLDER NAME</label>
           <input
-            onChange={(e) => setCardName(e.target.value)}
             required
             type="text"
             placeholder="e.g. Jane Appleseed"
+            onChange={(e) => setCardName(e.target.value)}
           />
           <label htmlFor="">CARD NUMBER </label>
           <input
             required
-            type="number"
+            type="text"
             placeholder="e.g. 1234 5678 9123 0000"
+            pattern="[0-9]+"
+            maxLength={16}
+            onChange={(e) => setCardNumber(e.target.value)}
           />
 
           <div className="cardFormDate">
@@ -88,17 +91,29 @@ const CardForm = () => {
               <input
                 required
                 className="month"
-                type="number"
+                type="text"
                 placeholder="MM"
                 min={0}
+                maxLength={2}
+                onChange={(e) => setMonth(e.target.value)}
               />
-              <input required className="year" type="number" placeholder="YY" />
+              <input
+                required
+                className="year"
+                type="number"
+                placeholder="YY"
+                maxLength={2}
+                onChange={(e) => setYear(e.target.value)}
+              />
               <input
                 required
                 className="cvc"
-                type="number"
+                type="text"
                 placeholder="e.g. 123"
-                max={3}
+                // value={cvc}
+                maxLength={3}
+                min={0}
+                onChange={(e) => setCVC(e.target.value)}
               />
             </div>
           </div>
