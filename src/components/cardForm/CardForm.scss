@@ -7,13 +7,13 @@
     position: absolute;
     left: 180px;
     top: 150px;
-
+    
     .topImg{
       position: absolute;
       top: 30px;
       left: 30px;
     }
-
+    
     .frontCardInfo{
       color: white;
       position: absolute;
@@ -26,17 +26,24 @@
         letter-spacing: 2px;
       }
 
-      .cardName, .cardDate{
-        font-size: 20px;
-        letter-spacing: 3px;
-        font-weight: 200;
-      }
-
       .cardDesc{
         display: flex;
-        justify-content: space-between;
-        gap: 220px;
         margin-top: 20px;
+
+        .cardName{
+          font-size: 20px;
+          letter-spacing: 3px;
+          font-weight: 200;
+        }
+
+      .cardDate{
+        position: absolute;
+        right: -30px;
+      }
+      
+      .cardName{
+        width: 300px;
+      }
       }
     }
   }

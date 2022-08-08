@@ -3,7 +3,7 @@ import "./CardForm.scss";
 
 const CardForm = () => {
   const [cardNumber, setCardNumber] = useState(null);
-  const [cardName, setCardName] = useState(null);
+  const [cardName, setCardName] = useState("Jhon Doe");
   const [month, setMonth] = useState(null);
   const [year, setYear] = useState(null);
   const [cvc, setCVC] = useState(null);
