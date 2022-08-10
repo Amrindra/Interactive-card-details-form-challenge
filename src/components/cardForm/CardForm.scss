@@ -94,6 +94,7 @@
         font-size: 12px;
         font-weight: 500;
         letter-spacing: 1.5px;
+        margin-top: 25px;
       }
 
       input{
@@ -110,12 +111,16 @@
       span{
         color: red;
         margin-top: 5px;
-        margin-bottom: 20px;
+        display: none;
+        
       }
 
       .top{
+        margin-top: 25px;
+
         .cvcLabel{
           margin-left: 60px;
+
         }
       }
 
@@ -147,5 +152,13 @@
         cursor: pointer;
       }
     }
+  }
+
+  input:invalid[focused="true"] {
+    border: 1px solid red;
+  }
+  
+  input:invalid[focused="true"] ~ span {
+    display: block;
   }
 }
