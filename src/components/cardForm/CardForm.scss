@@ -154,6 +154,38 @@
     }
   }
 
+  .submitResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+    h3{
+      font-size: 2.5rem;
+      letter-spacing: 5px;
+      margin: 30px 0;
+      text-transform: uppercase;
+    }
+
+    span{
+      color: gray;
+      font-size: 1.5rem;
+    }
+
+    button{
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      background-color: black;
+      color: white;
+      height: 40px;
+      font-size: 18px;
+      margin-top: 50px;
+      cursor: pointer;
+    }
+  }
+
+
   input:invalid[focused="true"] {
     border: 1px solid red;
   }
