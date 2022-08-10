@@ -25,6 +25,12 @@ const CardForm = () => {
 
   return (
     <div className="cardForm">
+      <div className="forMobileScreen">
+        <img
+          src="https://user-images.githubusercontent.com/70451928/183109779-2cdf23a6-9c83-4f3a-ae76-8a7fb86f899e.png"
+          alt=""
+        />
+      </div>
       <div className="frontCard">
         <div className="topImg">
           <img
@@ -32,12 +38,14 @@ const CardForm = () => {
             alt=""
           />
         </div>
+
         <div className="frontImg">
           <img
             src="https://user-images.githubusercontent.com/70451928/183109745-b02ac54a-f22b-4399-b696-4f7701dfd0e5.png"
             alt=""
           />
         </div>
+
         <div className="frontCardInfo">
           <p className="cardNumber">{format(cardNumber)}</p>
           <div className="cardDesc">
@@ -70,7 +78,7 @@ const CardForm = () => {
           <form onSubmit={handleSubmit}>
             <label htmlFor="">CARDHOLDER NAME</label>
             <input
-              // required="true"
+              required="true"
               className="cardHolderName"
               name="cardName"
               type="text"
@@ -83,7 +91,7 @@ const CardForm = () => {
 
             <label htmlFor="">CARD NUMBER </label>
             <input
-              // required
+              required="true"
               type="text"
               name="cardNumber"
               placeholder="e.g. 1234 5678 9123 0000"
@@ -91,7 +99,7 @@ const CardForm = () => {
               maxLength={16}
               onChange={(e) => setCardNumber(e.target.value)}
               onBlur={handleFocus}
-              onFocus={() => setFocused(true)}
+              // onFocus={() => setFocused(true)}
             />
             <span>Wrong format, numbers only</span>
 
@@ -105,7 +113,7 @@ const CardForm = () => {
 
               <div className="bottom">
                 <input
-                  // required
+                  required="true"
                   className="month"
                   name="month"
                   type="number"
@@ -118,7 +126,7 @@ const CardForm = () => {
                   onFocus={() => setFocused(true)}
                 />
                 <input
-                  // required
+                  required="true"
                   className="year"
                   type="number"
                   name="year"
@@ -130,7 +138,7 @@ const CardForm = () => {
                   onFocus={() => setFocused(true)}
                 />
                 <input
-                  // required
+                  required="true"
                   className="cvc"
                   type="text"
                   name="cvc"
