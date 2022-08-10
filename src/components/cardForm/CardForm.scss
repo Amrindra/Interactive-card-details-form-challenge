@@ -209,6 +209,7 @@
 
     .frontCard{
       left: 20px;
+      top: 130px;
       z-index: 999;
 
       .topImg{
@@ -227,6 +228,7 @@
       .frontCardInfo{
         top: 80px;
         left: 20px;
+        width: 220px;
 
         .cardNumber{
           font-size: 18px;
@@ -236,12 +238,13 @@
 
         .cardDesc{
           .cardName{
-            font-size: 1rem;
+            font-size: 12px;
           }
 
           .cardDate{
-            display: inline;
+            display: static;
             left: 170px;
+            font-size: 12px;
           }
         }
       }
@@ -249,20 +252,22 @@
 
     .backCard{
       left: 70px;
-      top: 67px;
+      top: 47px;
 
       img{
         width: 260px;
       }
 
       .backCardInfo{
-
+        top: 62px;
+        right: 30px;
+        font-size: 14px;
       }
     }
 
     .cardFormRight{
      display: block;
-     margin-top: 90px;
+     margin: 50px 10px ;
     }
 
    .cardFormLeft{
