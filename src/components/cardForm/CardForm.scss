@@ -129,6 +129,8 @@
       }
 
       .bottom{
+        display: flex;
+
         .month {
           width: 70px;
           margin-right: 10px;
@@ -138,10 +140,6 @@
           width: 70px;
           margin-right: 40px;
 
-        }
-        
-        .cvc{
-          width: 200px;
         }
       }
       
@@ -273,5 +271,31 @@
    .cardFormLeft{
      display: none;
    }
+
+   .cardFormRight{
+    flex: 0;
+
+    form{
+      .cardFormDate{
+        width: 100%;
+
+        .top{
+          .cvcLabel{
+            margin-left: 30px;
+          }
+        }
+        
+        .bottom{
+          .monthYearInput{
+            display: flex;
+            
+            .year {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
   }
+}
 }

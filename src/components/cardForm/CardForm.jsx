@@ -112,43 +112,48 @@ const CardForm = () => {
               </div>
 
               <div className="bottom">
-                <input
-                  required="true"
-                  className="month"
-                  name="month"
-                  type="number"
-                  placeholder="MM"
-                  pattern="[0-9]+"
-                  min={0}
-                  maxLength={2}
-                  onChange={(e) => setMonth(e.target.value)}
-                  onBlur={handleFocus}
-                  onFocus={() => setFocused(true)}
-                />
-                <input
-                  required="true"
-                  className="year"
-                  type="number"
-                  name="year"
-                  placeholder="YY"
-                  pattern="[0-9]+"
-                  maxLength={2}
-                  onChange={(e) => setYear(e.target.value)}
-                  onBlur={handleFocus}
-                  onFocus={() => setFocused(true)}
-                />
-                <input
-                  required="true"
-                  className="cvc"
-                  type="text"
-                  name="cvc"
-                  placeholder="e.g. 123"
-                  maxLength={3}
-                  min={0}
-                  onChange={(e) => setCVC(e.target.value)}
-                  onBlur={handleFocus}
-                  onFocus={() => setFocused(true)}
-                />
+                <div className="monthYearInput">
+                  <input
+                    required="true"
+                    className="month"
+                    name="month"
+                    type="number"
+                    placeholder="MM"
+                    pattern="[0-9]+"
+                    min={0}
+                    maxLength={2}
+                    onChange={(e) => setMonth(e.target.value)}
+                    onBlur={handleFocus}
+                    onFocus={() => setFocused(true)}
+                  />
+                  <input
+                    required="true"
+                    className="year"
+                    type="number"
+                    name="year"
+                    placeholder="YY"
+                    pattern="[0-9]+"
+                    maxLength={2}
+                    onChange={(e) => setYear(e.target.value)}
+                    onBlur={handleFocus}
+                    onFocus={() => setFocused(true)}
+                  />
+                </div>
+
+                <div className="cvcInput">
+                  <input
+                    required="true"
+                    className="cvc"
+                    type="text"
+                    name="cvc"
+                    placeholder="e.g. 123"
+                    maxLength={3}
+                    min={0}
+                    onChange={(e) => setCVC(e.target.value)}
+                    onBlur={handleFocus}
+                    onFocus={() => setFocused(true)}
+                  />
+                </div>
               </div>
               <span>Can't be blank</span>
             </div>
