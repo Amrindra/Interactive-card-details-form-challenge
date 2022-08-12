@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./CardForm.scss";
 
 const CardForm = () => {
@@ -19,9 +19,9 @@ const CardForm = () => {
     return splitDigit.toString().replace(/\d{4}(?=.)/g, "$& ");
   }
 
-  const handleFocus = () => {
+  function handleFocus() {
     setFocused(true);
-  };
+  }
 
   return (
     <div className="cardForm">
@@ -76,32 +76,30 @@ const CardForm = () => {
       <div className="cardFormRight">
         {submit ? (
           <form onSubmit={handleSubmit}>
-            <label htmlFor="">CARDHOLDER NAME</label>
+            <label htmlFor="cardName">CARDHOLDER NAME</label>
             <input
-              required="true"
+              required
               className="cardHolderName"
               name="cardName"
               type="text"
               placeholder="e.g. Jane Appleseed"
               // pattern="(/^[A-Za-z]+$/)"
-              focused={focused.toString()}
-              onFocus={() => setFocused(true)}
+              onBlur={handleFocus}
               onChange={(e) => setCardName(e.target.value)}
+              focused={focused.toString()}
             />
             <span>Wrong format, letter only</span>
 
-            <label htmlFor="">CARD NUMBER </label>
+            <label htmlFor="cardNumber">CARD NUMBER </label>
             <input
-              required="true"
-              type="text"
+              required
+              type="tel"
               name="cardNumber"
               placeholder="e.g. 1234 5678 9123 0000"
               pattern="[0-9\s]{13,19}"
-              inputMode="numeric"
               maxLength={16}
-              onChange={(e) => setCardNumber(e.target.value)}
               onBlur={handleFocus}
-              onFocus={() => setFocused(true)}
+              onChange={(e) => setCardNumber(e.target.value)}
               focused={focused.toString()}
             />
             <span>Wrong format, numbers only</span>
@@ -118,23 +116,22 @@ const CardForm = () => {
                 <div className="monthYearInput">
                   <div className="monthYearInputWrapper">
                     <input
-                      required="true"
+                      required
                       className="month"
                       name="month"
-                      type="number"
+                      type="tel"
                       placeholder="MM"
                       pattern="[0-9]+"
                       min={0}
                       maxLength={2}
                       onChange={(e) => setMonth(e.target.value)}
                       onBlur={handleFocus}
-                      onFocus={() => setFocused(true)}
                       focused={focused.toString()}
                     />
                     <input
-                      required="true"
+                      required
                       className="year"
-                      type="number"
+                      type="tel"
                       name="year"
                       placeholder="YY"
                       pattern="[0-9]+"
@@ -142,17 +139,16 @@ const CardForm = () => {
                       min={0}
                       onChange={(e) => setYear(e.target.value)}
                       onBlur={handleFocus}
-                      onFocus={() => setFocused(true)}
                       focused={focused.toString()}
                     />
                     <span>Can't be blank</span>
                   </div>
-                  <br />
+                  {/* <br /> */}
                 </div>
 
                 <div className="cvcInput">
                   <input
-                    required="true"
+                    required
                     className="cvc"
                     type="tel"
                     name="cvc"
@@ -162,7 +158,6 @@ const CardForm = () => {
                     min={0}
                     onChange={(e) => setCVC(e.target.value)}
                     onBlur={handleFocus}
-                    onFocus={() => setFocused(true)}
                     focused={focused.toString()}
                   />
                   <span>Can't be blank</span>

@@ -104,18 +104,35 @@
         margin-top: 5px;
         border-radius: 5px;
         border: 1px solid lightgray;
+
         &::placeholder{
           color: lightgray;
         }
+
+        &:invalid[focused="true"] {
+        border: 1px solid red;
+        }
+        
+        &:invalid[focused="true"] ~ span {
+          display: block;
+        }
       }
       
+      //Validation error section
       span{
         color: red;
         margin-top: 5px;
-        display: none;
-        
+        display: none; 
       }
 
+      // input:invalid[focused="true"] {
+      //   border: 1px solid red;
+      // }
+      
+      // input:invalid[focused="true"] ~ span {
+      //   display: block;
+      // }
+      
       .top{
         margin-top: 25px;
 
@@ -184,14 +201,6 @@
     }
   }
 
-
-  input:invalid[focused="true"] {
-    border: 1px solid red;
-  }
-  
-  input:invalid[focused="true"] ~ span {
-    display: block;
-  }
 }
 
 // ON TABLET
