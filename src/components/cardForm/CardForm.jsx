@@ -83,23 +83,24 @@ const CardForm = () => {
               name="cardName"
               type="text"
               placeholder="e.g. Jane Appleseed"
-              // pattern="[A-Za-z0-9]{1,20}"
+              // pattern="(/^[A-Za-z]+$/)"
               focused={focused.toString()}
               onFocus={() => setFocused(true)}
               onChange={(e) => setCardName(e.target.value)}
             />
-            <span>Name can't be blank</span>
+            <span>Wrong format, letter only</span>
 
             <label htmlFor="">CARD NUMBER </label>
             <input
               required="true"
-              type="number"
+              type="text"
               name="cardNumber"
               placeholder="e.g. 1234 5678 9123 0000"
-              // pattern="[0-9]+"
+              pattern="[0-9\s]{13,19}"
+              inputMode="numeric"
               maxLength={16}
               onChange={(e) => setCardNumber(e.target.value)}
-              // onBlur={handleFocus}
+              onBlur={handleFocus}
               onFocus={() => setFocused(true)}
               focused={focused.toString()}
             />
@@ -153,8 +154,9 @@ const CardForm = () => {
                   <input
                     required="true"
                     className="cvc"
-                    type="text"
+                    type="tel"
                     name="cvc"
+                    pattern="\d*"
                     placeholder="e.g. 123"
                     maxLength={3}
                     min={0}
