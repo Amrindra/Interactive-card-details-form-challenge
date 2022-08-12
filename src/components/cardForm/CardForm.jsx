@@ -85,6 +85,7 @@ const CardForm = () => {
               placeholder="e.g. Jane Appleseed"
               // pattern="[A-Za-z0-9]{1,20}"
               focused={focused.toString()}
+              onFocus={() => setFocused(true)}
               onChange={(e) => setCardName(e.target.value)}
             />
             <span>Name can't be blank</span>
@@ -92,14 +93,15 @@ const CardForm = () => {
             <label htmlFor="">CARD NUMBER </label>
             <input
               required="true"
-              type="text"
+              type="number"
               name="cardNumber"
               placeholder="e.g. 1234 5678 9123 0000"
-              pattern="[0-9]+"
+              // pattern="[0-9]+"
               maxLength={16}
               onChange={(e) => setCardNumber(e.target.value)}
-              onBlur={handleFocus}
-              // onFocus={() => setFocused(true)}
+              // onBlur={handleFocus}
+              onFocus={() => setFocused(true)}
+              focused={focused.toString()}
             />
             <span>Wrong format, numbers only</span>
 
@@ -113,31 +115,38 @@ const CardForm = () => {
 
               <div className="bottom">
                 <div className="monthYearInput">
-                  <input
-                    required="true"
-                    className="month"
-                    name="month"
-                    type="number"
-                    placeholder="MM"
-                    pattern="[0-9]+"
-                    min={0}
-                    maxLength={2}
-                    onChange={(e) => setMonth(e.target.value)}
-                    onBlur={handleFocus}
-                    onFocus={() => setFocused(true)}
-                  />
-                  <input
-                    required="true"
-                    className="year"
-                    type="number"
-                    name="year"
-                    placeholder="YY"
-                    pattern="[0-9]+"
-                    maxLength={2}
-                    onChange={(e) => setYear(e.target.value)}
-                    onBlur={handleFocus}
-                    onFocus={() => setFocused(true)}
-                  />
+                  <div className="monthYearInputWrapper">
+                    <input
+                      required="true"
+                      className="month"
+                      name="month"
+                      type="number"
+                      placeholder="MM"
+                      pattern="[0-9]+"
+                      min={0}
+                      maxLength={2}
+                      onChange={(e) => setMonth(e.target.value)}
+                      onBlur={handleFocus}
+                      onFocus={() => setFocused(true)}
+                      focused={focused.toString()}
+                    />
+                    <input
+                      required="true"
+                      className="year"
+                      type="number"
+                      name="year"
+                      placeholder="YY"
+                      pattern="[0-9]+"
+                      maxLength={2}
+                      min={0}
+                      onChange={(e) => setYear(e.target.value)}
+                      onBlur={handleFocus}
+                      onFocus={() => setFocused(true)}
+                      focused={focused.toString()}
+                    />
+                    <span>Can't be blank</span>
+                  </div>
+                  <br />
                 </div>
 
                 <div className="cvcInput">
@@ -152,10 +161,11 @@ const CardForm = () => {
                     onChange={(e) => setCVC(e.target.value)}
                     onBlur={handleFocus}
                     onFocus={() => setFocused(true)}
+                    focused={focused.toString()}
                   />
+                  <span>Can't be blank</span>
                 </div>
               </div>
-              <span>Can't be blank</span>
             </div>
 
             <button>Confirm</button>

@@ -40,17 +40,14 @@
           font-size: 20px;
           letter-spacing: 3px;
           font-weight: 200;
+          width: 300px;
+          text-transform: capitalize;
         }
 
-      .cardDate{
-        position: absolute;
-        right: 0px;
-      }
-      
-      .cardName{
-        width: 300px;
-        text-transform: capitalize;
-      }
+        .cardDate{
+          position: absolute;
+          right: 0px;
+        }
       }
     }
   }
@@ -197,12 +194,154 @@
   }
 }
 
+// ON TABLET
+@media screen and (max-width: 1024px){
+  .cardForm{
+    .frontCard{
+      top:240px;
+      left: 40px;
+
+      .topImg{
+        left: 20px;
+        
+        img{
+          width: 50px;
+        }
+      }
+
+      .frontImg img{
+        width: 270px;
+      }
+
+      .frontCardInfo{
+        top: 80px;
+        left: 20px;
+        width: 250px;
+
+        .cardDesc{
+          margin-top: 0px;
+          
+          .cardName{
+            font-size: 18px;
+          }
+        }
+
+        .cardNumber{
+          font-size: 18px;
+        }
+
+        .cardDate{
+          left: 200px;
+        }
+
+      }
+    }
+
+    .backCard{
+      left: 75px;
+
+      img{
+        width: 270px;
+      }
+
+    }
+
+    .backCard{
+      .backCardInfo{
+        top: 62px;
+        right: 40px;
+      }
+    }
+
+    .cardFormLeft {
+      flex: 1.5;
+      img{
+        width: 230px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 784px){
+  .cardForm{
+    .frontCard{
+      top:240px;
+      left: 40px;
+
+      .topImg{
+        left: 20px;
+        
+        img{
+          width: 50px;
+        }
+      }
+
+      .frontImg img{
+        width: 270px;
+      }
+
+      .frontCardInfo{
+        top: 80px;
+        left: 20px;
+        width: 250px;
+
+        .cardDesc{
+          margin-top: 0px;
+          
+          .cardName{
+            font-size: 18px;
+          }
+        }
+
+        .cardNumber{
+          font-size: 18px;
+        }
+
+        .cardDate{
+          left: 200px;
+        }
+
+      }
+    }
+
+    .backCard{
+      left: 75px;
+
+      img{
+        width: 270px;
+      }
+
+    }
+
+    .backCard{
+      .backCardInfo{
+        top: 62px;
+        right: 40px;
+      }
+    }
+
+    .cardFormLeft {
+      flex: 1.5;
+      img{
+        width: 230px;
+      }
+    }
+  }
+}
+
+// ON MOBILE
 @media screen and (max-width: 480px){
   .cardForm{
     display: block;
-
+    
     .forMobileScreen{
       display: block;
+      width: 500px;
+      
+      img{
+        height: 230px;
+        width: 100%;
+      }
     }
 
     .frontCard{
@@ -232,6 +371,7 @@
           font-size: 18px;
           height: 10px;
           letter-spacing: 1px;
+          height: 35px;
         }
 
         .cardDesc{
