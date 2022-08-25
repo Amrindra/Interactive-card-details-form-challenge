@@ -1,7 +1,13 @@
 # Interactive-card-details-form-challenge
-This is a challenge from Frontend Mentor
+This is a challenge from Frontend Mentor (https://credit-card-form-validation.netlify.app/)
+
+
+<img width="1015" alt="credit_validation" src="https://user-images.githubusercontent.com/70451928/186569857-445147a7-38af-44ed-aa62-b47239cb42c7.png">
+
+
 
 ![bg-card-back](https://user-images.githubusercontent.com/70451928/183109655-42c570a8-16d3-47b6-b366-c9e70f101491.png)
+
 
 
 ![bg-card-front](https://user-images.githubusercontent.com/70451928/183109745-b02ac54a-f22b-4399-b696-4f7701dfd0e5.png)
