@@ -17,3 +17,4 @@ This is a challenge from Frontend Mentor (https://credit-card-form-validation.ne
 ![favicon-32x32](https://user-images.githubusercontent.com/70451928/183109794-0e37f900-3f49-4add-8ec4-f929a1f97f91.png)
 ![card-logo](https://user-images.githubusercontent.com/70451928/183109811-2895a694-4406-4cff-89fc-84072da77ce4.svg)
 ![icon-complete](https://user-images.githubusercontent.com/70451928/183109818-fa7668a6-8c47-45bb-a59a-a2cd407d6eca.svg)
+<img width="250" alt="credit-card" src="https://user-images.githubusercontent.com/70451928/233807927-9f34f078-ff3c-4845-b8ec-0aac1ee3911e.png">
